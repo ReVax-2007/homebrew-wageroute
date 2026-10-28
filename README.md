@@ -21,13 +21,13 @@ The cask covers both Apple Silicon (`WageRoute-<version>-arm64.dmg`) and Intel (
 
 The WageRoute build is ad-hoc signed, not notarized. Homebrew quarantines cask downloads by default, so the first launch shows a Gatekeeper dialog — **right-click the app → Open → Open** and it opens normally from then on.
 
-To skip the prompt entirely, install with `--no-quarantine` (only do this for software you trust — it disables a real protection):
+To skip the prompt entirely, remove the quarantine attribute after installing (requires your password — only do this for software you trust; it disables a real protection):
 
 ```bash
-brew install --cask --no-quarantine wageroute
+sudo xattr -rd com.apple.quarantine /Applications/WageRoute.app
 ```
 
-Downloading the DMG with `curl` instead of a browser or package manager also avoids the prompt, because curl does not set the quarantine attribute. Full background is in [docs/RELEASING.md](https://github.com/ReVax-2007/wageroute/blob/main/docs/RELEASING.md) in the main repository.
+(The old `brew install --cask --no-quarantine` flag no longer works for this.) Downloading the DMG with `curl` instead of a browser or package manager also avoids the prompt, because curl does not set the quarantine attribute. Full background is in [docs/RELEASING.md](https://github.com/ReVax-2007/wageroute/blob/main/docs/RELEASING.md) in the main repository.
 
 ## Upgrade
 
@@ -51,7 +51,7 @@ This removes only the app. The cask deliberately defines **no `zap` stanza**, so
 | --- | --- |
 | "Refusing to load cask ... from untrusted tap" | `brew trust revax-2007/wageroute` |
 | "It seems there is already an App at '/Applications/WageRoute.app'" | Quit WageRoute, then `brew install --cask --force wageroute` |
-| Gatekeeper dialog on first launch | Right-click the app → Open; or reinstall with `--no-quarantine` |
+| Gatekeeper dialog on first launch | Right-click the app → Open; or run `sudo xattr -rd com.apple.quarantine /Applications/WageRoute.app` to remove quarantine |
 | `brew upgrade` says the cask is not installed | `brew install --cask wageroute` |
 
 ## Maintaining this tap

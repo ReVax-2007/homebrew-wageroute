@@ -14,7 +14,7 @@ cask "wageroute" do
   desc "Local-first paycheck routing and cash flow planner"
   homepage "https://github.com/ReVax-2007/wageroute"
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "WageRoute.app"
 
