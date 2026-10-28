@@ -14,6 +14,8 @@ cask "wageroute" do
   desc "Local-first paycheck routing and cash flow planner"
   homepage "https://github.com/ReVax-2007/wageroute"
 
+  depends_on macos: ">= :ventura"
+
   app "WageRoute.app"
 
   # No zap stanza on purpose: user data (the ledger database) lives in
