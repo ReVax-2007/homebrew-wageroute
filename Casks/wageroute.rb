@@ -1,5 +1,5 @@
 cask "wageroute" do
-  version "1.3.1"
+  version "1.4.0"
 
   on_arm do
     sha256 "03d35b465e037eb8f7558fb3a183eac8e81c2ce96dda666b089f713772d2c1d3"
