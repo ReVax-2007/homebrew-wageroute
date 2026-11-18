@@ -2,11 +2,11 @@ cask "wageroute" do
   version "1.4.0"
 
   on_arm do
-    sha256 "03d35b465e037eb8f7558fb3a183eac8e81c2ce96dda666b089f713772d2c1d3"
+    sha256 "0e25f955275f994ed01397c5280c7f33bbf4e2b54c8cb3d034d322ba636804100"
     url "https://github.com/ReVax-2007/wageroute/releases/download/v#{version}/WageRoute-#{version}-arm64.dmg"
   end
   on_intel do
-    sha256 "b61ebf8790ec71115184c09606989c10ece8bb85b89a8084b9975e2ff59774b8"
+    sha256 "5ef99fa156f7d8da3957f519c6096f898547a106569dd9bba16c7cc384a24c77"
     url "https://github.com/ReVax-2007/wageroute/releases/download/v#{version}/WageRoute-#{version}-x64.dmg"
   end
 
